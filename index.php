@@ -1,6 +1,6 @@
 <?php
 
-use src\Controller\FormController;
+use Php\JsonContactusForm\Controller\FormController;
 
 require_once './vendor/autoload.php';
 require_once './loader.php';
