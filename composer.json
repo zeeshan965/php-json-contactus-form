@@ -1,0 +1,21 @@
+{
+    "name": "php/json-contactus-form",
+    "description": "The script will read form fields from json and render the html, It has form validations and on submit it will send data in email",
+    "type": "project",
+    "require": {
+        "php": "^8.0",
+        "larapack/dd": "^1.1"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Php\\JsonContactusForm\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Zeeshan Iqbal",
+            "email": "zeeshanbutt223@gmail.com"
+        }
+    ]
+}
