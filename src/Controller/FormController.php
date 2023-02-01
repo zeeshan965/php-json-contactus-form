@@ -2,32 +2,21 @@
 
 namespace Php\JsonContactusForm\Controller;
 
+use JetBrains\PhpStorm\NoReturn;
+
 class FormController
 {
-    /** @var string $filePath */
-    private string $filePath;
-
-    /** @var false|string $fileContent */
-    private string|false $fileContent;
-
     /** @var array|null $json */
     private array|null $formFields;
-
-    /**
-     * @param string $filePath
-     */
-    public function __construct(string $filePath)
-    {
-        $this->filePath = $filePath;
-        $this->fileContent = file_get_contents($this->filePath, 'form.json');
-        $this->formFields = json_decode($this->fileContent, true);
-    }
 
     /**
      * @return void
      */
     public function __invoke()
     {
+        $filePath = __DIR__ . '/../../form.json';
+        $fileContent = file_get_contents($filePath, 'form.json');
+        $this->formFields = json_decode($fileContent, true);
         $this->view();
     }
 
@@ -68,5 +57,49 @@ class FormController
         }
 
         if (true) print $output;
+    }
+
+    /**
+     * @param array $data
+     */
+    public function post(array $data)
+    {
+        list ($errorCount, $errors) = $this->validateFormData($data);
+        if ($errorCount > 0) {
+            echo json_encode($errors);
+        } else {
+            //send the email to user
+            echo json_encode(['status' => 'success']);
+        }
+        return;
+    }
+
+    /**
+     * @param array $data
+     * @return array
+     */
+    private function validateFormData(array $data): array
+    {
+        $errors = array();
+        if (empty($data['text'])) {
+            $errors['text'] = "Text is required";
+        }
+        if (empty($data['textarea'])) {
+            $errors['textarea'] = "Textarea is required";
+        }
+        if (empty($data['password'])) {
+            $errors['password'] = "Password is required";
+        }
+        if (empty($data['select'])) {
+            $errors['select'] = "Select is required";
+        }
+        if (empty($data['radio'])) {
+            $errors['radio'] = "Radio is required";
+        }
+        if (empty($data['checkbox'])) {
+            $errors['checkbox'] = "Checkbox is required";
+        }
+
+        return [count($errors), $errors];
     }
 }

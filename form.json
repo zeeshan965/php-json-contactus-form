@@ -1,49 +1,53 @@
 [
   {
     "type": "text",
-    "required": true,
+    "default": "",
     "label": "Text",
     "className": "form-control",
     "name": "text-1675228127718-0",
     "subtype": "text",
-    "permission": [1,2,3,4]
+    "file_read_permission": true,
+    "file_write_permission": true
   },
   {
     "type": "textarea",
-    "required": true,
+    "default": "",
     "label": "Text Area",
     "className": "form-control",
     "name": "textarea-1675228128889-0",
     "subtype": "textarea",
-    "permission": [1,2,3,4]
+    "file_read_permission": true,
+    "file_write_permission": true
   },
   {
     "type": "text",
     "subtype": "password",
-    "required": true,
+    "default": "",
     "label": "Password",
     "className": "form-control",
     "name": "text-1675228134871-0",
-    "permission": [1,2,3,4]
+    "file_read_permission": true,
+    "file_write_permission": true
   },
   {
     "type": "select",
-    "required": true,
+    "default": "",
     "label": "Select",
     "className": "form-control",
     "name": "select-1675228139555-0",
     "multiple": false,
-    "permission": [1,2,3,4],
+    "file_read_permission": true,
+    "file_write_permission": true,
     "values": [
       {
         "label": "Option 1",
         "value": "option-1",
-        "selected": true
+        "selected": false
       },
       {
         "label": "Option 2",
         "value": "option-2",
-        "selected": false
+        "selected": true
       },
       {
         "label": "Option 3",
@@ -54,10 +58,11 @@
   },
   {
     "type": "radio-group",
-    "required": true,
+    "default": "",
     "label": "Radio Group",
     "name": "radio-group-1675228145050-0",
-    "permission": [1,2,3,4],
+    "file_read_permission": true,
+    "file_write_permission": true,
     "values": [
       {
         "label": "Option 1",
@@ -72,29 +77,30 @@
       {
         "label": "Option 3",
         "value": "option-3",
-        "selected": false
+        "selected": true
       }
     ]
   },
   {
     "type": "checkbox-group",
-    "required": true,
+    "default": "",
     "label": "Checkbox Group",
-    "permission": [1,2,3,4],
+    "file_read_permission": true,
+    "file_write_permission": true,
     "name": "checkbox-group-1675228151646-0",
     "values": [
       {
-        "label": "Option 1",
+        "label": "CKB Option 1",
         "value": "option-1",
         "selected": true
       },
       {
-        "label": "Option 2",
+        "label": "CKB Option 2",
         "value": "option-2",
         "selected": false
       },
       {
-        "label": "Option 3",
+        "label": "CKB Option 3",
         "value": "option-3",
         "selected": false
       }
