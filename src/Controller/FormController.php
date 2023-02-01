@@ -26,6 +26,20 @@ class FormController
      */
     public function __invoke()
     {
-        dd($this->formFields);
+        $this->view();
+        //dd($this->formFields);
+    }
+
+    private function view()
+    {
+        $this->loadFile();
+    }
+
+    private function loadFile()
+    {
+        require('index.php');
+        $json_file = '../View/index.php';
+        dd( $json_file);
+        echo include_once($json_file);
     }
 }
