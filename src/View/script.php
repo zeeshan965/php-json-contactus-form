@@ -1,7 +1,7 @@
 <script>
     let rules = {};
     <?php if (isset($formFields) && count($formFields) > 0) { ?>
-    rules = {<?php foreach ($formFields as $rule) echo "'" . $rule['name'] . "'" . ': {required: true},'; ?> };
+    //rules = {<?php foreach ($formFields as $rule) echo "'" . $rule['name'] . "'" . ': {required: true},'; ?> };
     <?php } ?>
 
     $(document).ready(function () {
@@ -15,45 +15,20 @@
                 }
             },
             submitHandler: function (form) {
-                console.log($(form))
-                console.log($(form).serializeToString())
-                console.log($(form).serialize())
                 $.ajax({
                     url: form.action,
                     type: form.method,
                     data: $(form).serialize(),
                     success: function (response) {
+                        $(form).find('.text-danger').text('');
                         const data = JSON.parse(response);
                         console.log(data)
-                        if (data.text) {
-                            $('#form').find('.text-danger').text(data.text);
+                        if (data.status === 'error') {
+                            Object.keys(data.errors).forEach(k => {
+                                $('[name="' + k + '"]').parent().find('.text-danger').text(data.errors[k]);
+                            });
                         } else {
-                            $('#form').find('.text-danger').text('');
-                        }
-                        if (data.textarea) {
-                            $('#form').find('.text-danger').text(data.textarea);
-                        } else {
-                            $('#form').find('.text-danger').text('');
-                        }
-                        if (data.password) {
-                            $('#form').find('.text-danger').text(data.password);
-                        } else {
-                            $('#form').find('.text-danger').text('');
-                        }
-                        if (data.select) {
-                            $('#form').find('.text-danger').text(data.select);
-                        } else {
-                            $('#form').find('.text-danger').text('');
-                        }
-                        if (data.radio) {
-                            $('#form').find('.text-danger').text(data.radio);
-                        } else {
-                            $('#form').find('.text-danger').text('');
-                        }
-                        if (data.checkbox) {
-                            $('#form').find('.text-danger').text(data.checkbox);
-                        } else {
-                            $('#form').find('.text-danger').text('');
+                            alert(data.status);
                         }
                     }
                 });
