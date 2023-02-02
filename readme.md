@@ -23,3 +23,11 @@ secure contact form based on AJAX. With all client and server validations. The f
 will then email to xxxxx@xxxxxxx.com in HTML format.
 
 Whole script wrote in Core Php.
+
+**Installation**:
+
+- clone the project or download the .zip
+- composer install
+- start php shell server php -S 127.0.0.1:8006 index.php
+
+
