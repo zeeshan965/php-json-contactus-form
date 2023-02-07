@@ -4,16 +4,16 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 $mail = new PHPMailer();
 //Enable SMTP debugging.
-$mail->SMTPDebug = 0;
+$mail->SMTPDebug = \PHPMailer\PHPMailer\SMTP::DEBUG_OFF;
 //Set PHPMailer to use SMTP.
 $mail->isSMTP();
 //Set SMTP host name
-$mail->Host = "almerajgroups.com";
+$mail->Host = "mail.almerajgroups.com";
 //Set this to true if SMTP host requires authentication to send email
 $mail->SMTPAuth = true;
 //Provide username and password
-$mail->Username = "noreply@almerajgroups.com";
-$mail->Password = "[Y3M7;lpIC)(";
+$mail->Username = "info@almerajgroups.com";
+$mail->Password = "HwW3}cc#=uy0";
 //If SMTP requires TLS encryption then set it
 $mail->SMTPAutoTLS = false;
 $mail->SMTPSecure = false;

@@ -1,7 +1,7 @@
 <script>
     let rules = {};
     <?php if (isset($formFields) && count($formFields) > 0) { ?>
-    //rules = {<?php foreach ($formFields as $rule) echo "'" . $rule['name'] . "'" . ': {required: true},'; ?> };
+    rules = {<?php foreach ($formFields as $rule) echo "'" . $rule['name'] . "'" . ': {required: true},'; ?> };
     <?php } ?>
 
     $(document).ready(function () {
