@@ -28,10 +28,11 @@
                         console.log(data)
                         if (data.status === 'error') {
                             Object.keys(data.errors).forEach(k => {
-                                if ($('[name="' + k + '"]').parent().find('.text-danger').length === 1) {
-                                    $('[name="' + k + '"]').parent().find('.text-danger').text(data.errors[k])
+                                const elem = $('[name="' + k + '"]').parent();
+                                if (elem.find('.text-danger').length === 1) {
+                                    elem.find('.text-danger').text(data.errors[k])
                                 } else {
-                                    $('[name="' + k + '"]').parent().append('<span class="text-danger">' + data.errors[k] + '</span>');
+                                    elem.append('<span class="text-danger">' + data.errors[k] + '</span>');
                                 }
 
                             });
