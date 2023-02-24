@@ -34,6 +34,8 @@ Whole script wrote in Core Php.
 
 - Include theme to render form
 - show form data on the left panel on typing
+- show/hide loader
+- show sweet alert notification on error/success
 
 **Note: In order to make css and js load I changed shell server command to from this php -S 127.0.0.1:8006 index.php to this php -S 127.0.0.1:8006**
 
