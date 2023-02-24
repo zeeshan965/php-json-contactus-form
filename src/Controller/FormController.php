@@ -85,6 +85,7 @@ class FormController
             $this->mailer->Body = $this->loadMailTemplate($data);
             $this->mailer->AltBody = "This is the plain text version of the email content";
 
+            //$this->mailer->addAddress("qaiser@newrich.com", "Qaiser Newrich");//Recipient name is optional
             $this->mailer->addAddress("zeeshanbutt223@gmail.com", "Zeeshan Iqbal");//Recipient name is optional
             $this->mailer->addAddress("noreply@almerajgroups.com", "Reply - Dynamic Form Assignment"); //Address to which recipient will reply
 

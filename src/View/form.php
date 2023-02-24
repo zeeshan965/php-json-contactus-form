@@ -5,7 +5,7 @@
             <?php if (isset($formField['subtype']) && $formField['subtype'] == 'textarea') { ?>
                 <textarea name="<?php echo $formField['name']; ?>"
                           class="form-control" <?php echo !$formField['file_write_permission'] ? 'readonly' : ''; ?>
-                          ></textarea>
+                          ><?php echo $formField['default']; ?></textarea>
             <?php } elseif ($formField['type'] == 'select') { ?>
                 <select name="<?php echo $formField['name']; ?>"
                         class="form-control" <?php echo !$formField['file_write_permission'] ? 'disabled' : ''; ?>
@@ -43,6 +43,7 @@
                 <?php } ?>
             <?php } else { ?>
                 <input type="<?php echo $formField['subtype']; ?>" name="<?php echo $formField['name']; ?>"
+                       value="<?php echo $formField['default']; ?>"
                     <?php echo !$formField['file_write_permission'] ? 'readonly' : ''; ?> class="form-control"/>
             <?php } ?>
         </div>

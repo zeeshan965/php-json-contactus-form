@@ -21,6 +21,18 @@
     </style>
 </head>
 <body>
+<div class='loader-wrapper'>
+    <div class='loader'>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--text'></div>
+    </div>
+</div>
+
 <section class="ftco-section img bg-hero" style="background-image: url('../../public/assets/images/bg_1.jpg');">
     <div class="container">
         <div class="row justify-content-center">

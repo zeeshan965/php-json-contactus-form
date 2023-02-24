@@ -6,7 +6,7 @@
         <div class="text pl-4">
             <p>
                 <span><?php echo $formField['label']; ?> Field:</span>
-                <span id="<?php echo $formField['name']; ?>"></span>
+                <span style="<?php echo $formField['style']; ?>" id="<?php echo $formField['name']; ?>"></span>
             </p>
         </div>
     </div>

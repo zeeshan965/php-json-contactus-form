@@ -7,6 +7,11 @@
     rules = {<?php foreach ($formFields as $rule) echo "'" . $rule['name'] . "'" . ': {required: true},'; ?> };
     <?php } ?>
 
+    <?php if (isset($formFields) && count($formFields) > 0) { foreach ($formFields as $rule) { ?>
+    $('#<?php echo $rule['name'];?>').text($("[name='<?php echo $rule['name'];?>']").val());
+    <?php } } ?>
+
+
     $(document).ready(function () {
         $('#form').validate({
             rules: rules,
@@ -18,6 +23,7 @@
                 }
             },
             submitHandler: function (form) {
+                showLoader();
                 $.ajax({
                     url: form.action,
                     type: form.method,
@@ -39,10 +45,25 @@
                         } else {
                             alert(data.status);
                         }
+                        hideLoader();
                     }
                 });
             }
         });
     });
 
+    (function () {
+        $(document).on("keyup keypress blur change", "input, textarea", (e) => {
+            const id = $(e.target).attr('name');
+            $('#' + id).text($(e.target).val());
+        });
+    })();
+
+    function showLoader() {
+        $('.loader-wrapper').show();
+    }
+
+    function hideLoader() {
+        $('.loader-wrapper').hide();
+    }
 </script>

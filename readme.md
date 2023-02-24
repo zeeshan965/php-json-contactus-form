@@ -30,6 +30,11 @@ Whole script wrote in Core Php.
 - composer install
 - start php shell server php -S 127.0.0.1:8006
 
+**UI Improvements**:
+
+- Include theme to render form
+- show form data on the left panel on typing
+
 **Note: In order to make css and js load I changed shell server command to from this php -S 127.0.0.1:8006 index.php to this php -S 127.0.0.1:8006**
 
 
