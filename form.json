@@ -7,7 +7,8 @@
     "name": "text-1675228127718-0",
     "subtype": "text",
     "file_read_permission": true,
-    "file_write_permission": true
+    "file_write_permission": true,
+    "fa_class": "fa fa-file-text"
   },
   {
     "type": "textarea",
@@ -17,7 +18,8 @@
     "name": "textarea-1675228128889-0",
     "subtype": "textarea",
     "file_read_permission": true,
-    "file_write_permission": true
+    "file_write_permission": true,
+    "fa_class": "fa fa-sticky-note"
   },
   {
     "type": "text",
@@ -27,7 +29,8 @@
     "className": "form-control",
     "name": "text-1675228134871-0",
     "file_read_permission": true,
-    "file_write_permission": true
+    "file_write_permission": true,
+    "fa_class": "fa fa-lock"
   },
   {
     "type": "select",
@@ -38,6 +41,7 @@
     "multiple": false,
     "file_read_permission": true,
     "file_write_permission": true,
+    "fa_class": "fa fa-caret-down",
     "values": [
       {
         "label": "Option 1",
@@ -63,6 +67,7 @@
     "name": "radio-group-1675228145050-0",
     "file_read_permission": true,
     "file_write_permission": true,
+    "fa_class": "fa fa-check-circle-o",
     "values": [
       {
         "label": "Option 1",
@@ -88,6 +93,7 @@
     "file_read_permission": true,
     "file_write_permission": true,
     "name": "checkbox-group-1675228151646-0",
+    "fa_class": "fa fa-check-circle",
     "values": [
       {
         "label": "CKB Option 1",
