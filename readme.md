@@ -28,6 +28,8 @@ Whole script wrote in Core Php.
 
 - clone the project or download the .zip
 - composer install
-- start php shell server php -S 127.0.0.1:8006 index.php
+- start php shell server php -S 127.0.0.1:8006
+
+**Note: In order to make css and js load I changed shell server command to from this php -S 127.0.0.1:8006 index.php to this php -S 127.0.0.1:8006**
 
 

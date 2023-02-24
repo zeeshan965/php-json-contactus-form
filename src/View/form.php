@@ -1,4 +1,4 @@
-<form action="<?php echo $_SERVER['REMOTE_ADDR'] . '/index.php'; ?>" method="post" id="form">
+<form action="" method="post" id="form">
     <?php if (isset($formFields) && count($formFields) > 0) foreach ($formFields as $formField) { ?>
         <div class="form-group <?php echo !$formField['file_read_permission'] ? 'hide' : ''; ?>">
             <label><?php echo $formField['label']; ?></label>
