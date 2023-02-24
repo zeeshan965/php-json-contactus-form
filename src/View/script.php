@@ -1,5 +1,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
     let rules = {};
@@ -33,6 +34,7 @@
                         const data = JSON.parse(response);
                         console.log(data)
                         if (data.status === 'error') {
+                            showErrorAlert();
                             Object.keys(data.errors).forEach(k => {
                                 const elem = $('[name="' + k + '"]').parent();
                                 if (elem.find('.text-danger').length === 1) {
@@ -43,7 +45,7 @@
 
                             });
                         } else {
-                            alert(data.status);
+                            showSuccessAlert();
                         }
                         hideLoader();
                     }
@@ -65,5 +67,23 @@
 
     function hideLoader() {
         $('.loader-wrapper').hide();
+    }
+
+    function showSuccessAlert() {
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Data has been updated successfully!'
+        }).then((res) => {
+            location.reload();
+        })
+    }
+
+    function showErrorAlert() {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!'
+        })
     }
 </script>
