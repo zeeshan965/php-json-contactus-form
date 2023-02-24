@@ -21,26 +21,30 @@
             <?php } elseif ($formField['type'] == 'radio-group') { ?>
                 <?php if (isset($formField['values']) && count($formField['values']) > 0) { ?>
                     <?php foreach ($formField['values'] as $option) { ?>
-                        <input type="radio" name="<?php echo $formField['name']; ?>"
-                               value="<?php echo $option['value']; ?>"
-                            <?php if ($option['selected']) { ?> checked <?php } ?> />
-                        <?php echo $option['label']; ?>
+                        <div>
+                            <input type="radio" name="<?php echo $formField['name']; ?>"
+                                   value="<?php echo $option['value']; ?>"
+                                <?php if ($option['selected']) { ?> checked <?php } ?> />
+                            <?php echo $option['label']; ?>
+                        </div>
+
                     <?php } ?>
                 <?php } ?>
             <?php } elseif ($formField['type'] == 'checkbox-group') { ?>
                 <?php if (isset($formField['values']) && count($formField['values']) > 0) { ?>
                     <?php foreach ($formField['values'] as $checkbox) { ?>
-                        <input type="checkbox" name="<?php echo $formField['name']; ?>"
-                               value="<?php echo $checkbox['value']; ?>"
-                            <?php if ($checkbox['selected']) { ?> checked <?php } ?> />
-                        <?php echo $checkbox['label']; ?>
+                        <div>
+                            <input type="checkbox" name="<?php echo $formField['name']; ?>"
+                                   value="<?php echo $checkbox['value']; ?>"
+                                <?php if ($checkbox['selected']) { ?> checked <?php } ?> />
+                            <?php echo $checkbox['label']; ?>
+                        </div>
                     <?php } ?>
                 <?php } ?>
             <?php } else { ?>
                 <input type="<?php echo $formField['subtype']; ?>" name="<?php echo $formField['name']; ?>"
                     <?php echo !$formField['file_write_permission'] ? 'readonly' : ''; ?> class="form-control"/>
             <?php } ?>
-            <span class="text-danger"></span>
         </div>
     <?php } ?>
     <input type="submit" value="Submit" class="btn btn-primary"/>

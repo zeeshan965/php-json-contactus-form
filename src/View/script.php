@@ -12,7 +12,7 @@
             rules: rules,
             errorPlacement: function (error, element) {
                 if (element.is(":radio") || element.is(":checkbox")) {
-                    element.parent().append(error);
+                    element.parent().parent().append(error);
                 } else {
                     error.insertAfter(element);
                 }
@@ -28,7 +28,12 @@
                         console.log(data)
                         if (data.status === 'error') {
                             Object.keys(data.errors).forEach(k => {
-                                $('[name="' + k + '"]').parent().find('.text-danger').text(data.errors[k]);
+                                if ($('[name="' + k + '"]').parent().find('.text-danger').length === 1) {
+                                    $('[name="' + k + '"]').parent().find('.text-danger').text(data.errors[k])
+                                } else {
+                                    $('[name="' + k + '"]').parent().append('<span class="text-danger">' + data.errors[k] + '</span>');
+                                }
+
                             });
                         } else {
                             alert(data.status);
